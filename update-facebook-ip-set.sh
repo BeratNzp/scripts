@@ -22,8 +22,8 @@
 ###############################################################################
 
 # WAFv2 IP Set to be updated
-IPSETNAME=$1 #Prompt Parameter Example: AllowFacebookRobots
-IPSETID=$2 #Prompt Parameter Example: cc293a64-94ey-40u9-8xc6-69z22
+IPSETNAME=$1 # Prompt Parameter Example: AllowFacebookRobots
+IPSETID=$2 # Prompt Parameter Example: cc293a64-94ey-40u9-8xc6-69z22
 
 IPSETSCOPE="REGIONAL" # REGIONAL or CLOUDFRONT
 
