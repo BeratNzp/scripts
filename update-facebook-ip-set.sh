@@ -13,6 +13,7 @@
 # need to authorize the list and edit of the IP Set you will use.
 #
 # Requirements:
+# * aws-cli
 # * jo
 #
 # Usage Example:
