@@ -18,7 +18,6 @@
 # * jo
 #
 # Usage Example:
-#
 # ./update-ip-blocks.sh "AllowFacebookRobots" "cc293a64-94ey-40u9-8xc6-69z22"
 #
 ###############################################################################
