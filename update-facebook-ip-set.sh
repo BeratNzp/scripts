@@ -28,7 +28,7 @@
 ##########################
 IPSETNAME=$1 #Prompt Parameter Example: AllowFacebookRobots
 IPSETID=$2 #Prompt Parameter Example: cc293a64-94ey-40u9-8xc6-69z22
-TIME="$(date +'%d-%m-%Y')"
+TIME="$(date +'%d-%m-%Y %T')"
 ##########################
 # .DO NOT CHANGE OR DELETE
 ##########################
@@ -45,5 +45,5 @@ IPSETLOCKTOKEN=`aws wafv2 get-ip-set --scope=$IPSETSCOPE --name=$IPSETNAME --id=
 IPSETUPDATE=`aws wafv2 update-ip-set --scope=$IPSETSCOPE --name=$IPSETNAME --id=$IPSETID --lock-token=$IPSETLOCKTOKEN --addresses=$IPSETJSON`
 
 # Print the output of $IPSETUPDATE process as a log file.
-echo '[$TIME]-$IPSETUPDATE' >> update-facebook-ip-set.log
-echo '#' >> update-facebook-ip-set.log
+echo '[$TIME]-$IPSETUPDATE' | sudo tee update-facebook-ip-set.log
+echo '#' | sudo tee update-facebook-ip-set.log
