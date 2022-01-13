@@ -1,8 +1,6 @@
 #!/bin/bash
 ###############################################################################
-#
 # update-facebook-ip-set.sh
-# v1.0
 # Created by beratnzp
 #
 # This script can crawl facebook current IPv4 blocks then update
@@ -22,15 +20,9 @@
 #
 ###############################################################################
 
-##########################
-# DO NOT CHANGE OR DELETE
-##########################
+# WAFv2 IP Set to be updated
 IPSETNAME=$1 #Prompt Parameter Example: AllowFacebookRobots
 IPSETID=$2 #Prompt Parameter Example: cc293a64-94ey-40u9-8xc6-69z22
-TIME="$(date +'%d-%m-%Y %T')"
-##########################
-# .DO NOT CHANGE OR DELETE
-##########################
 
 IPSETSCOPE="REGIONAL" # REGIONAL or CLOUDFRONT
 
@@ -44,5 +36,6 @@ IPSETLOCKTOKEN=`aws wafv2 get-ip-set --scope=$IPSETSCOPE --name=$IPSETNAME --id=
 IPSETUPDATE=`aws wafv2 update-ip-set --scope=$IPSETSCOPE --name=$IPSETNAME --id=$IPSETID --lock-token=$IPSETLOCKTOKEN --addresses=$IPSETJSON`
 
 # Print the output of $IPSETUPDATE process as a log file.
+TIME="$(date +'%d-%m-%Y %T')"
 echo '[$TIME]-$IPSETUPDATE' | sudo tee update-facebook-ip-set.log
 echo '#' | sudo tee update-facebook-ip-set.log
