@@ -11,6 +11,7 @@
 # On which EC2 Instance this script will run, you need to give that instance
 # an "AWSWAFFullAccess" policy. If you want it to be more secure; you only
 # need to authorize the list and edit of the IP Set you will use.
+# Like this: https://github.com/BeratNzp/aws/blob/main/update-facebook-ip-set-aws-policy.json
 #
 # Requirements:
 # * aws-cli
