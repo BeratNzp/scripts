@@ -4,7 +4,7 @@
 # Created by beratnzp
 #
 # This script can crawl facebook current IPv4 blocks then update
-# your selected AWS WAF IP Set. Then you can automate this script
+# your selected AWS WAFv2 IP Set. Then you can automate this script
 # via crontab.
 #
 # CAUTION:
@@ -13,6 +13,7 @@
 # need to authorize the list and edit of the IP Set you will use.
 #
 # Requirements:
+# * aws-cli
 # * jo
 #
 # Usage Example:
