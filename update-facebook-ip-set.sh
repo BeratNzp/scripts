@@ -28,7 +28,7 @@ IPSETID=$2 # Prompt Parameter Example: cc293a64-94ey-40u9-8xc6-69z22
 IPSETSCOPE="REGIONAL" # REGIONAL or CLOUDFRONT
 
 # Crawl facebook current IPv4 Blocks
-IPSETJSON=`whois -h whois.radb.net -- '-i origin AS32934' | grep ^route: | rev | cut -d ' ' -f1 | rev | sort -n -t . -k 1,1 -k 2,2 -k 3,3 -k 4,4|jo -a`
+IPSETJSON=`whois -h whois.radb.net -- '-i origin AS32934' | grep ^route: | rev | cut -d ' ' -f1 | rev | sort -n -t . -k 1,1 -k 2,2 -k 3,3 -k 4,4 | jo -a`
 
 # Get selected IP Set Lock Token for update IP Set
 IPSETLOCKTOKEN=`aws wafv2 get-ip-set --scope=$IPSETSCOPE --name=$IPSETNAME --id=$IPSETID  | jq '.LockToken' | cut -d '"' -f 2`
