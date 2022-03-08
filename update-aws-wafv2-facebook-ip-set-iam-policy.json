@@ -17,7 +17,7 @@
             "Sid": "VisualEditor2",
             "Effect": "Allow",
             "Action": "wafv2:UpdateIPSet",
-            "Resource": "arn:aws:wafv2:*:*:*/ipset/AllowFacebookRobots/*"
+            "Resource": "arn:aws:wafv2:*:*:*/ipset/YOUR-IPSET-NAME-OF-FACEBOOK/*"
         }
     ]
 }

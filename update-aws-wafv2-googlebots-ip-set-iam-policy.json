@@ -1,0 +1,24 @@
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "VisualEditor0",
+            "Effect": "Allow",
+            "Action": "wafv2:GetIPSet",
+            "Resource": "arn:aws:wafv2:*:YOUR-AWS-ACCOUNT-ID:*/ipset/*/*"
+        },
+        {
+            "Sid": "VisualEditor1",
+            "Effect": "Allow",
+            "Action": "wafv2:ListIPSets",
+            "Resource": "*"
+        },
+        {
+            "Sid": "VisualEditor2",
+            "Effect": "Allow",
+            "Action": "wafv2:UpdateIPSet",
+            "Resource": "arn:aws:wafv2:*:*:*/ipset/YOUR-IPSET-NAME-OF-GOOGLEBOTS/*"
+        }
+    ]
+}
+
