@@ -38,5 +38,6 @@ IPSETUPDATE=`aws wafv2 update-ip-set --scope=$IPSETSCOPE --name=$IPSETNAME --id=
 
 # Print the output of $IPSETUPDATE process as a log file.
 TIME="$(date +'%d-%m-%Y %T')"
-echo [$TIME] $IPSETUPDATE | sudo tee -a update-aws-wafv2-googlebots-ip-set.log
-echo '#' | sudo tee -a update-aws-wafv2-googlebots-ip-set.log
+LOGPATH="~/update-googlebots-ip-set.log"
+echo [$TIME] $IPSETUPDATE | sudo tee -a $LOGPATH
+echo '#' | sudo tee -a $LOGPATH
